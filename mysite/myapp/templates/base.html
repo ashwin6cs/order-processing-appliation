@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        table, th, td {
+          border: 1px solid white;
+          border-collapse: collapse;
+        }
+        th {
+          background-color:aqua;
+          padding: 15px;
+        }
+        td {
+          background-color:aquamarine;
+          padding: 15px;
+          width: 30%;
+        }
+        input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color:rgb(66, 226, 226);
+  color: white;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+        </style>
+</head>
+<body style="background-color:aliceblue">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-3" href="/">MN's Foods </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="orders" target="_blank">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact" target="_blank">Contact</a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</nav>
+<br><br>
+    <center>
+    
+    
+
+        <div class="container" style="background-color:rgb(176, 243, 252)">
+    
+          <h1 class="display-1 text-center">Welcome To MN's Food</h1>
+          <p>The MN's Food Company Limited (IHCL) and its subsidiaries, bring together a group of brands and businesses that offer a fusion of warm Indian hospitality and world-class service. IHCL has a portfolio of 150+ hotels globally across 4 continents, 12 countries and in over 80 locations. These include Taj – the hallmark of iconic hospitality and Vivanta with its collection of sophisticated upscale hotels among others.</p>
+          <p>On the confluence of the Bay of Bengal and the Adyar river, The MN's Palace is Chennai’s first and only seafront city hotel, designed by John Gerondelis from Smallwood, Reynolds, Stewart, Stewart & Associates Inc. While the public areas, guestrooms and suites, Library Blu, Jamavar and Spectra have been designed by Jeffrey A. Wilkes, the principal designer of DESIGNWILKES, the art and embellishment has been done by Mrs. Madhu Nair, Director Operations and Design of The MN's Palaces, Hotels and Resorts. Drawn from the inspiration of Chettinad Dynasty, the architecture of the Palace Hotel exudes the regal and opulent style. Set on 4.8 acres of land, the 11-storeyed hotel features 326 rooms and suites. Equipped with world-class amenities, the meeting and conference centres are luxuriously and lavishly spread. Its close proximity to the central business district and local attractions and having a spectacular sea view on offer is sure to make the experience of our guests a very memorable one.</p>
+          <p>Located in Chennai (Mylapore Tiruvallikk), The MN's Palace Chennai is within a 5-minute drive of Marina Beach and Kapaleeswarar Temple. This 5-star hotel is 6.3 mi (10.1 km) from Phoenix Market City and 6.9 mi (11.1 km) from Chennai Trade Centre. Make yourself at home in one of the 316 guestrooms featuring minibars and DVD players. Complimentary wired and wireless Internet access keeps you connected, and 40-inch LCD televisions are provided for your entertainment. Private bathrooms with shower/tub combinations feature deep soaking bathtubs and complimentary toiletries. Conveniences include phones, as well as laptop-compatible safes and desks. Relax at the full-service spa, where you can enjoy massages. You can take advantage of recreational amenities such as an outdoor pool, a spa tub, and a sauna. This hotel also features wireless Internet access (surcharge), concierge services, and babysitting/childcare (surcharge). Grab a bite at China XO, one of the hotel's 3 restaurants, or stay in and take advantage of the 24-hour room service. Snacks are also available at the coffee shop/café. Wrap up your day with a drink at the bar/lounge. Buffet breakfasts are available daily from 7:00 AM to 10:00 AM for a fee. Featured amenities include wired Internet access (surcharge), a 24-hour business center, and limo/town car service. A roundtrip airport shuttle is provided for a surcharge (available 24 hours), and free valet parking is available onsite.</p>
+          
+        </div>
+        {% block body %}
+ 
+        {% endblock %}
+    </div>
+</center>
+</body>
+</html>

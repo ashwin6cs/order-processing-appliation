@@ -1,0 +1,52 @@
+
+{% extends 'base.html' %}
+
+<center>
+<form class="form-inline"  action="create" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+    <table style="width:50%">
+        <tbody>
+            <tr><td><label for="firstname"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Firstname &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+        <input type="text" name="firstname" class="form-control" style="width:70%;" placeholder="First Name"required="required"/></td></tr>
+        <tr><td><label for="lastname"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lastname &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+        <input type="text" name="lastname" class="form-control" style="width:70%;" placeholder="Last Name" required="required"/></td></tr>
+        <tr><td><label for="item"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+        <input type="text" name="item" class="form-control" style="width:70%;" placeholder="Enter The Item " required="required"/></td></tr>
+        <tr><td><label for="Deliveryaddress"><b>&nbsp;&nbsp;&nbsp;Delivery address &nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+            <input type="text" name="Deliveryaddress" class="form-control" style="width:70%;" placeholder="Enter The Delivery address " required="required"/></td></tr>
+        <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-sm btn-primary" formaction="https://formspree.io/f/mpzkgekv"  style="color:azure;background-color:rgb(36, 230, 117)"><span class="glyphicon glyphicon-plus"></span> Place Order</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" style="color:azure;background-color:rgb(36, 230, 117)"><a href="views" target=”_blank”> View Order </a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" style="color:azure;background-color:rgb(36, 230, 117)"><a href="changeorder" target=”_blank”> Change Order </a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" style="color:azure;background-color:rgb(36, 230, 117)"><a href="cancelorder" target=”_blank”> Cancel Order </a></button>
+    </td></tr>
+    </tbody>
+    </table>
+    </div>
+</form>
+<br />
+<table class="table table-bordered" style="width:50%">
+    <thead class="alert-warning" >
+        <tr >
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Action</th>
+            <th>item</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ member.firstname }}</td>
+            <td>{{ member.lastname }}</td>
+            <td>{{ member.item }}</td>
+            <td>{{ member.address }}</td>
+            <td><button style="color:azure;background-color:rgb(225, 238, 50)"><center><a  href="edit/{{ member.id }}" ><b> Change Order </b> </a> </button><br><br><button style="color:azure;background-color:rgb(238, 150, 18)"><a class="btn btn-sm btn-danger" href="delete/{{ member.id }}" ><span class="glyphicon glyphicon-trash"></span><b> Cancel Order </b></a></button></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</center>
+
+
